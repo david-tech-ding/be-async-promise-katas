@@ -62,13 +62,9 @@ const dog = () => {
 //
 
 const joke = () => {
-  const questionPromise = fetch("jokes", "question").then((res) => {
-    return res.joke
-  })
+  const questionPromise = fetch("jokes", "question").then((res) => res.joke)
 
-  const answerPromise = fetch("jokes").then((res) => {
-    return res.answer
-  })
+  const answerPromise = fetch("jokes").then((res) => res.answer)
 
   return Promise.all([questionPromise, answerPromise]).then(
     ([question, answer]) => ({
